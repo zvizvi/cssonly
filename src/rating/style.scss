@@ -1,0 +1,46 @@
+.cssonly-rating {
+  display: inline-flex;
+  position: relative;
+  font-size: 36px;
+  flex-direction: row-reverse;
+
+
+  input[type="radio"] {
+    display: none;
+  
+    + label {
+      transform: scale(1);
+      transform-origin: center center;
+      transition: transform 0.15s;
+      margin-left: 2%;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        
+        &::before,
+        ~ label::before {
+          content: "★";
+          color: #ffb400;
+        }
+      }
+
+      &::before {
+        content: "☆";
+        font-size: inherit;
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.26);
+        cursor: pointer;
+        transition: color 0.15s;
+      }
+    }
+  }
+
+  &:not(:hover) input[type="radio"]:checked ~ label::before {
+    content: "★";
+    color: #ffb400;
+  }
+}
