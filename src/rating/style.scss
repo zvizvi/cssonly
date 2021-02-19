@@ -1,46 +1,50 @@
+:root {
+  --icon-size: 36px;
+  --filled-icon: "★";
+  --non-filled-icon: "☆";
+  --filled-color: #ffb400;
+  --non-filled-color: rgba(0, 0, 0, 0.26);
+}
+
 .cssonly-rating {
   display: inline-flex;
   position: relative;
-  font-size: 36px;
+  font-size: var(--icon-size);
   flex-direction: row-reverse;
-
+  justify-content: center;
 
   input[type="radio"] {
     display: none;
-  
+
     + label {
       transform: scale(1);
       transform-origin: center center;
       transition: transform 0.15s;
-      margin-left: 2%;
+      margin: 0 1%;
 
-      &:first-of-type {
-        margin-left: 0;
+      &::before {
+        content: var(--non-filled-icon);
+        color: var(--non-filled-color);
+        font-size: inherit;
+        display: inline-block;
+        cursor: pointer;
+        transition: color 0.15s;
       }
 
       &:hover {
         transform: scale(1.2);
-        
+
         &::before,
         ~ label::before {
-          content: "★";
-          color: #ffb400;
+          content: var(--filled-icon);
+          color: var(--filled-color);
         }
-      }
-
-      &::before {
-        content: "☆";
-        font-size: inherit;
-        display: inline-block;
-        color: rgba(0, 0, 0, 0.26);
-        cursor: pointer;
-        transition: color 0.15s;
       }
     }
   }
 
   &:not(:hover) input[type="radio"]:checked ~ label::before {
-    content: "★";
-    color: #ffb400;
+    content: var(--filled-icon);
+    color: var(--filled-color);
   }
 }
