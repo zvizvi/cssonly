@@ -9,7 +9,7 @@
 - [ ] popover
 - [x] rating
 - [x] tabs
-- [ ] tooltip
+- [x] tooltip
 
 
 ### Structure

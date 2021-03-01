@@ -1,0 +1,108 @@
+[cssonly-tooltip] {
+  position: relative;
+  display: inline-block;
+
+  &::after,
+  &::before {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -12px);
+    z-index: 1000;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0;
+    transition: opacity 0.35s ease 0.25s;
+  }
+
+  &::before {
+    content: attr(cssonly-tooltip);
+    background: #333;
+    color: #eee;
+    text-align: start;
+    padding: 8px 12px;
+    white-space: nowrap;
+    bottom: 100%;
+    border-radius: 3px;
+    box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.65);
+  }
+
+  &::after {
+    content: "";
+    background: transparent;
+    border: 8px solid transparent;
+    border-top-color: #333;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.cssonly-tooltip-multiline::before {
+    width: 100vw;
+    max-width: 240px;
+    white-space: normal;
+  }
+
+  &[class*=cssonly-tooltip-bottom] {
+    &::before,
+    &::after {
+      transform: translate(-50%, 12px);
+    }
+
+    &::before {
+      bottom: auto;
+      top: 100%;
+    }
+
+    &::after {
+      bottom: 0;
+      border: 8px solid transparent;
+      border-bottom-color: #333;
+    }
+  }
+
+  &.cssonly-tooltip-bottom-right::before {
+    transform: translate(-24px, 12px);
+  }
+
+  &.cssonly-tooltip-bottom-left::before {
+    left: auto;
+    right: 50%;
+    transform: translate(24px, 12px);
+  }
+
+  &.cssonly-tooltip-top-right::before {
+    transform: translate(-24px, -12px);
+  }
+
+  &.cssonly-tooltip-top-left::before {
+    left: auto;
+    right: 50%;
+    transform: translate(24px, -12px);
+  }
+
+  // Light theme
+  &.cssonly-tooltip-light {
+    &::before {
+      background: #fff;
+      color: #333;
+    }
+
+    &::after {
+      border-top-color: #fff;
+    }
+
+    &[class*=cssonly-tooltip-bottom]::after {
+      border-top-color: transparent;
+      border-bottom-color: #fff;
+    }
+  }
+}
