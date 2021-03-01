@@ -1,0 +1,37 @@
+:root {
+  --height: 400px;
+  --width: 600px;
+}
+
+.cssonly-image-comparison {
+  display: inline-block;
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+
+  > * {
+    max-width: 100%;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+
+    &:first-child {
+      max-width: calc(100% - 13px) !important;
+      width: 50%;
+      resize: horizontal;
+      z-index: 2;
+    }
+
+    > img {
+      width: var(--width);
+      height: var(--height);
+      object-fit: cover;
+      -webkit-user-drag: none;
+    }
+  }
+}

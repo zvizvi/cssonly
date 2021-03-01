@@ -4,6 +4,7 @@
 - [ ] accordion
 - [ ] collapse
 - [x] dropdown
+- [x] image comparison
 - [ ] modal
 - [ ] popover
 - [x] rating
