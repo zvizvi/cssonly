@@ -29,7 +29,7 @@
     color: #999;
     transition: color var(--trnasition-time);
 
-    &:first-of-type:after {
+    &:first-of-type::after {
       content: '';
       position: absolute;
       height: 1px;
@@ -40,7 +40,7 @@
       background: #ccc;
     }
 
-    &:last-of-type:after {
+    &:last-of-type::after {
       content: '';
       position: absolute;
       height: 2px;
@@ -79,7 +79,7 @@
 
     @for $i from 1 through 20 {
       &:nth-of-type(#{$i}):checked {
-        ~ label:last-of-type:after {
+        ~ label:last-of-type::after {
           left: calc(var(--tabs-width, 100% / var(--tabs-number)) * #{$i - 1});
         }
       }

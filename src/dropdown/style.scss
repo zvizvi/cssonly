@@ -8,42 +8,17 @@
 
   summary {
     display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    padding: 5px 10px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-    text-align: center;
     white-space: nowrap;
-    vertical-align: middle;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
     cursor: pointer;
-    color: #333;
-    background-color: #fff;
-    border-color: #ccc;
 
     &::-webkit-details-marker {
       display: none;
-    }
-
-    &:hover {
-      color: #333;
-      background-color: #e6e6e6;
-      border-color: #adadad;
-    }
-
-    &:active {
-      outline: 0;
-      -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.13);
-      box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.13);
     }
   }
 
@@ -110,7 +85,7 @@
       display: block;
     }
 
-    > summary:before {
+    > summary::before {
       position: fixed;
       top: 0;
       right: 0;
