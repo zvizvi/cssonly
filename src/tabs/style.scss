@@ -1,0 +1,88 @@
+:root {
+  // --tabs-number: 5; // one of them is required
+  // --tabs-width: 70px; // one of them is required
+  --line-color: #4f46e5;
+  --trnasition-time: 0.2s;
+}
+
+.cssonly-tabs {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-wrap: wrap;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  label {
+    flex-grow: var(--tabs-width, 1);
+    order: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 19px;
+    padding: 4px 10px;
+    height: 30px;
+    width: var(--tabs-width);
+    text-align: center;
+    cursor: pointer;
+    color: #999;
+    transition: color var(--trnasition-time);
+
+    &:first-of-type:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: 0;
+      right: 0;
+      top: 30px;
+      z-index: 1;
+      background: #ccc;
+    }
+
+    &:last-of-type:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      left: 0;
+      top: 29px;
+      z-index: 2;
+      background: var(--line-color);
+      width: var(--tabs-width, calc(100% / var(--tabs-number)));
+      transition: left var(--trnasition-time);
+    }
+  }
+
+  .tab-content {
+    padding: 10px;
+    background: #fff;
+    display: none;
+    order: 99;
+    width: 100%;
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked + label {
+      color: #333;
+
+      + .tab-content {
+        display: block;
+      }
+    }
+
+    &[disabled] + label {
+      background: #fafafa;
+      cursor: default;
+    }
+
+    @for $i from 1 through 20 {
+      &:nth-of-type(#{$i}):checked {
+        ~ label:last-of-type:after {
+          left: calc(var(--tabs-width, 100% / var(--tabs-number)) * #{$i - 1});
+        }
+      }
+    }
+  }
+}
