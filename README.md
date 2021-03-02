@@ -13,7 +13,7 @@
 
 
 ### Structure
-- [x] Webpack config
+- [x] ~Webpack config~
 - [ ] Github action to auto run `npm build`
-- [ ] Publish as an npm package
+- [x] ~Publish as an npm package~
 - [ ] Create a Docs repo
