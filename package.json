@@ -1,7 +1,7 @@
 {
   "name": "cssonly",
   "description": "",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "dist/cssonly.css",
   "devDependencies": {
     "autoprefixer": "^9.8.6",

@@ -1,6 +1,7 @@
 .cssonly-image-comparison {
   --height: 400px;
   --width: 600px;
+  --initial-overlay-width: 50%;
 
   display: inline-block;
   position: relative;
@@ -20,7 +21,7 @@
 
     &:first-child {
       max-width: calc(100% - 13px) !important;
-      width: 50%;
+      width: var(--initial-overlay-width);
       resize: horizontal;
       z-index: 2;
     }
@@ -28,6 +29,7 @@
     > img {
       width: var(--width);
       height: var(--height);
+      max-width: unset !important;
       object-fit: cover;
       -webkit-user-drag: none;
     }
