@@ -1,15 +1,12 @@
-:root {
+.cssonly-rating {
   --icon-size: 36px;
   --filled-icon: "★";
   --non-filled-icon: "☆";
   --filled-color: #ffb400;
   --non-filled-color: rgba(0, 0, 0, 0.26);
-}
 
-.cssonly-rating {
   display: inline-flex;
   position: relative;
-  font-size: var(--icon-size);
   flex-direction: row-reverse;
   justify-content: center;
 
@@ -25,7 +22,7 @@
       &::before {
         content: var(--non-filled-icon);
         color: var(--non-filled-color);
-        font-size: inherit;
+        font-size: var(--icon-size);
         display: inline-block;
         cursor: pointer;
         transition: color 0.15s;

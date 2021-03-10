@@ -1,11 +1,9 @@
-:root {
+.cssonly-tabs {
   // --tabs-number: 5; // one of them is required
   // --tabs-width: 70px; // one of them is required
   --line-color: #4f46e5;
   --trnasition-time: 0.2s;
-}
 
-.cssonly-tabs {
   display: flex;
   position: relative;
   align-items: center;

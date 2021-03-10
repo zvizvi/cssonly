@@ -1,9 +1,7 @@
-:root {
+.cssonly-image-comparison {
   --height: 400px;
   --width: 600px;
-}
 
-.cssonly-image-comparison {
   display: inline-block;
   position: relative;
   width: var(--width);
