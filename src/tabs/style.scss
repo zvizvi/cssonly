@@ -1,8 +1,7 @@
 .cssonly-tabs {
-  // --tabs-number: 5; // one of them is required
-  // --tabs-width: 70px; // one of them is required
+  // --tabs-fixed-width: 70px; // optional
   --line-color: #4f46e5;
-  --trnasition-time: 0.2s;
+  --transition-time: 0.2s;
 
   display: flex;
   position: relative;
@@ -14,18 +13,18 @@
   }
 
   label {
-    flex-grow: var(--tabs-width, 1);
+    flex-grow: var(--tabs-fixed-width, 1);
     order: 1;
     white-space: nowrap;
     overflow: hidden;
     font-size: 19px;
     padding: 4px 10px;
     height: 30px;
-    width: var(--tabs-width);
+    width: var(--tabs-fixed-width);
     text-align: center;
     cursor: pointer;
     color: #999;
-    transition: color var(--trnasition-time);
+    transition: color var(--transition-time);
 
     &:first-of-type::after {
       content: '';
@@ -46,8 +45,8 @@
       top: 29px;
       z-index: 2;
       background: var(--line-color);
-      width: var(--tabs-width, calc(100% / var(--tabs-number)));
-      transition: left var(--trnasition-time);
+      width: var(--tabs-fixed-width, calc(100% / var(--tabs-number)));
+      transition: left var(--transition-time);
     }
   }
 
@@ -76,9 +75,17 @@
     }
 
     @for $i from 1 through 20 {
-      &:nth-of-type(#{$i}):checked {
-        ~ label:last-of-type::after {
-          left: calc(var(--tabs-width, 100% / var(--tabs-number)) * #{$i - 1});
+      &:nth-of-type(#{$i}) {
+        ~ label {
+          --tabs-number: #{$i};
+        }
+
+        &:checked {
+          ~ label:last-of-type::after {
+            left: calc(
+              var(--tabs-fixed-width, 100% / var(--tabs-number)) * #{$i - 1}
+            );
+          }
         }
       }
     }

@@ -23,6 +23,7 @@
         content: var(--non-filled-icon);
         color: var(--non-filled-color);
         font-size: var(--icon-size);
+        line-height: var(--icon-size);
         display: inline-block;
         cursor: pointer;
         transition: color 0.15s;
