@@ -20,9 +20,9 @@
     white-space: nowrap;
     overflow: hidden;
     font-size: 19px;
-    padding: 0 10px;
+    padding: 0 1px;
     height: 32px;
-    line-height: 28px;
+    line-height: 30px;
     text-align: center;
     cursor: pointer;
     color: #999;
@@ -34,7 +34,7 @@
       height: 1px;
       left: 0;
       right: 0;
-      top: 30px;
+      top: 32px;
       z-index: 1;
       background: #ccc;
     }
@@ -44,7 +44,7 @@
       position: absolute;
       height: 2px;
       left: 0;
-      top: 29px;
+      top: 31px;
       z-index: 2;
       background: var(--line-color);
       width: var(--tabs-fixed-width, calc(100% / var(--tabs-number)));
@@ -54,7 +54,6 @@
 
   .tab-content {
     padding: 10px;
-    background: #fff;
     display: none;
     order: 99;
     width: 100%;
@@ -84,9 +83,7 @@
 
         &:checked {
           ~ label:last-of-type::after {
-            left: calc(
-              var(--tabs-fixed-width, 100% / var(--tabs-number)) * #{$i - 1}
-            );
+            left: calc(var(--tabs-fixed-width, 100% / var(--tabs-number)) * #{$i - 1});
           }
         }
       }
