@@ -14,13 +14,15 @@
 
   label {
     flex-grow: var(--tabs-fixed-width, 1);
+    flex-basis: var(--tabs-fixed-width, 0);
+    width: var(--tabs-fixed-width, auto);
     order: 1;
     white-space: nowrap;
     overflow: hidden;
     font-size: 19px;
-    padding: 4px 10px;
-    height: 30px;
-    width: var(--tabs-fixed-width);
+    padding: 0 10px;
+    height: 32px;
+    line-height: 28px;
     text-align: center;
     cursor: pointer;
     color: #999;
