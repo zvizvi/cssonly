@@ -5,7 +5,9 @@
 - [ ] collapse
 - [x] dropdown
 - [x] image comparison
+- [ ] image slider
 - [ ] modal
+- [ ] parallax
 - [ ] popover
 - [x] rating
 - [x] tabs
@@ -15,4 +17,4 @@
 ### Structure
 - [x] Webpack config
 - [x] Publish as an npm package
-- [x] Create a Docs repo
+- [x] Create a [Docs](https://github.com/zvizvi/cssonly-docs) repo
