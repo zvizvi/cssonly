@@ -16,5 +16,5 @@
 
 ### Structure
 - [x] Webpack config
-- [x] Publish as an npm package
+- [x] Publish as an [npm package](https://www.npmjs.com/package/cssonly)
 - [x] Create a [Docs](https://github.com/zvizvi/cssonly-docs) repo
