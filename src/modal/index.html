@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cssonly Modal</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <link type="text/css" rel="stylesheet" href="/dist/cssonly.css" />
+
+  <div id="app">
+    <div>
+      <input type="checkbox" class="cssonly-modal-checkbox" name="modal1" id="modal1" />
+      <div style="text-align: center;">
+        <br><br><br>
+        <label for="modal1">Show Modal</label>
+      </div>
+      <div class="cssonly-modal" id="modal1">
+        <label class="cssonly-modal-backdrop" for="modal1"></label>
+        <div class="cssonly-modal-content">
+          <label for="modal1" class="cssonly-modal-close"></label>
+          <div class="cssonly-modal-header">Modal Header</div>
+          <div class="cssonly-modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+          <div class="cssonly-modal-footer">
+            <label for="modal1"><a>Close</a></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

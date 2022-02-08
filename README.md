@@ -6,7 +6,7 @@
 - [x] dropdown
 - [x] image comparison
 - [ ] image slider
-- [ ] modal
+- [x] modal
 - [ ] parallax
 - [ ] popover
 - [x] rating
