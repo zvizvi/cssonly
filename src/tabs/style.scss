@@ -29,7 +29,7 @@
     transition: color var(--transition-time);
 
     &:first-of-type::after {
-      content: '';
+      content: "";
       position: absolute;
       height: 1px;
       left: 0;
@@ -40,7 +40,7 @@
     }
 
     &:last-of-type::after {
-      content: '';
+      content: "";
       position: absolute;
       height: 2px;
       left: 0;
