@@ -12,14 +12,19 @@
 
   summary {
     display: inline-block;
+    list-style: none !important;
     white-space: nowrap;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     user-select: none;
     cursor: pointer;
 
+    &::-webkit-details-marker {
+      display: none;
+    }
+
     &::marker {
-      content: "";
+      content: none;
     }
   }
 
