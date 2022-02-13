@@ -62,11 +62,17 @@
   input[type='radio'] {
     display: none;
 
-    &:checked + label {
-      color: #333;
+    &:checked {
+      + label {
+        color: #333;
 
-      + .tab-content {
-        display: block;
+        + .tab-content {
+          display: block;
+        }
+      }
+
+      ~ label:last-of-type::after {
+        left: calc(var(--tabs-fixed-width, 100% / var(--tabs-number)) * (var(--checked-tab) - 1));
       }
     }
 
@@ -82,8 +88,8 @@
         }
 
         &:checked {
-          ~ label:last-of-type::after {
-            left: calc(var(--tabs-fixed-width, 100% / var(--tabs-number)) * #{$i - 1});
+          ~ label {
+            --checked-tab: #{$i};
           }
         }
       }
