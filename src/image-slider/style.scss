@@ -4,7 +4,6 @@
   --transition-time: 0.3s;
   --prev-arrow: "❮";
   --next-arrow: "❯";
-
   position: relative;
   width: var(--width);
   height: var(--height);
@@ -81,49 +80,8 @@
       right: -30px;
     }
 
-    &:first-of-type {
-      &::before {
-        z-index: 2;
-      }
-    }
-  }
-
-  input:checked {
-    ~ .slides-wrapper .slides {
-      transform: translateX(calc(var(--width) * (1 - var(--selected-slide))));
-    }
-  }
-
-  @for $i from 1 through 20 {
-    input:nth-of-type(#{$i}) {
-      ~ * {
-        --slides-number: #{$i};
-      }
-
-      &:checked {
-        ~ .slides-wrapper {
-          --selected-slide: #{$i};
-        }
-
-        ~ .prev-arrows {
-          label:nth-of-type(#{$i - 1})::before {
-            z-index: 2;
-          }
-        }
-
-        ~ .next-arrows {
-          label:nth-of-type(#{$i + 1})::before {
-            z-index: 2;
-          }
-        }
-
-        ~ .tracks label:nth-of-type(#{$i}) {
-          &::after {
-            transform: translate(-50%, -50%) scale(1, 1);
-            opacity: 1;
-          }
-        }
-      }
+    &:first-of-type::before {
+      z-index: 2;
     }
   }
 
@@ -171,6 +129,62 @@
         background-color: #fff;
         opacity: 0;
         transition: transform 0.3s;
+      }
+    }
+  }
+
+  input {
+    &:checked {
+      ~ .slides-wrapper .slides {
+        transform: translateX(calc(var(--width) * (1 - var(--selected-slide))));
+      }
+    }
+
+    &:indeterminate {
+      ~ .next-arrows {
+        label:nth-of-type(2)::before {
+          z-index: 2;
+        }
+      }
+
+      ~ .tracks {
+        label:first-of-type::after {
+          transform: translate(-50%, -50%) scale(1, 1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @for $i from 1 through 20 {
+    input:nth-of-type(#{$i}) {
+      ~ * {
+        --slides-number: #{$i};
+      }
+
+      &:checked {
+        ~ .slides-wrapper {
+          --selected-slide: #{$i};
+        }
+
+        ~ .prev-arrows {
+          label:nth-of-type(#{$i - 1})::before {
+            z-index: 2;
+          }
+        }
+
+        ~ .next-arrows {
+          label:nth-of-type(#{$i + 1})::before {
+            z-index: 2;
+          }
+        }
+
+        ~ .tracks {
+          label:nth-of-type(#{$i})::after {
+            transform: translate(-50%, -50%) scale(1, 1);
+            opacity: 1;
+          }
+        }
       }
     }
   }
