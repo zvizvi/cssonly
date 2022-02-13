@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cssonly Image slider</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style.scss">
+</head>
+
+<body>
+  <link type="text/css" rel="stylesheet" href="/dist/cssonly.css" />
+
+  <div id="app" style="text-align: center;">
+    <div class="cssonly-slider">
+      <input type="radio" checked name="cssonly-slider" id="slide-1" />
+      <input type="radio" name="cssonly-slider" id="slide-2" />
+      <input type="radio" name="cssonly-slider" id="slide-3" />
+      <input type="radio" name="cssonly-slider" id="slide-4" />
+      <div class="slides-wrapper">
+        <div class="slides">
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Nature-View.jpg/640px-Nature-View.jpg" alt="" srcset="">
+          </div>
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Part_of_the_view_on_Qinling_mountains.jpg/640px-Part_of_the_view_on_Qinling_mountains.jpg" alt="" srcset="">
+          </div>
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Krabi_beach_view_-_panoramio.jpg/640px-Krabi_beach_view_-_panoramio.jpg" alt="" srcset="">
+          </div>
+          <div class="slide">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Eilat_night_hotels_2016.jpg/640px-Eilat_night_hotels_2016.jpg" alt="" srcset="">
+          </div>
+        </div>
+      </div>
+      <!-- Optional slider arrows -->
+      <div class="prev-arrows">
+        <label class="prev-arrow" for="slide-1"></label>
+        <label class="prev-arrow" for="slide-2"></label>
+        <label class="prev-arrow" for="slide-3"></label>
+        <label class="prev-arrow" for="slide-4"></label>
+      </div>
+      <div class="next-arrows">
+        <label class="next-arrow" for="slide-1"></label>
+        <label class="next-arrow" for="slide-2"></label>
+        <label class="next-arrow" for="slide-3"></label>
+        <label class="next-arrow" for="slide-4"></label>
+      </div>
+      <!-- end -->
+
+      <!-- Optional slider tracks -->
+      <div class="tracks">
+        <label for="slide-1"></label>
+        <label for="slide-2"></label>
+        <label for="slide-3"></label>
+        <label for="slide-4"></label>
+      </div>
+      <!-- end -->
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
