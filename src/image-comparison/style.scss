@@ -24,6 +24,17 @@
       width: var(--initial-overlay-width);
       resize: horizontal;
       z-index: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        background: rgba(255, 255, 255, 0.5);
+        bottom: 0;
+        right: 0;
+        border-radius: 4px;
+      }
     }
 
     > img {
