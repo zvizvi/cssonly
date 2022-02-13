@@ -37,6 +37,7 @@
       top: 32px;
       z-index: 1;
       background: #ccc;
+      user-select: none;
     }
 
     &:last-of-type::after {
@@ -49,6 +50,7 @@
       background: var(--line-color);
       width: var(--tabs-fixed-width, calc(100% / var(--tabs-number)));
       transition: left var(--transition-time);
+      user-select: none;
     }
   }
 
