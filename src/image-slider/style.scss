@@ -74,7 +74,7 @@
       right: -30px;
     }
 
-    &:nth-of-type(2)::before {
+    &:first-of-type::before {
       z-index: 2;
     }
   }
@@ -135,6 +135,12 @@
     }
 
     &:indeterminate {
+      ~ .next-arrows {
+        label:nth-of-type(2)::before {
+          z-index: 2;
+        }
+      }
+
       ~ .tracks {
         label:first-of-type::after {
           transform: translate(-50%, -50%) scale(1, 1);
