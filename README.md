@@ -5,7 +5,7 @@
 - [ ] collapse
 - [x] dropdown
 - [x] image comparison
-- [ ] image slider
+- [x] image slider
 - [x] modal
 - [ ] parallax
 - [ ] popover

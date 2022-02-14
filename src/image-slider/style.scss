@@ -25,24 +25,18 @@
     min-width: 100%;
     height: 100%;
     transition: transform var(--transition-time) ease-in-out;
-    // animation: cssonlySlider 8s linear infinite;
-    // animation-timing-function: steps(4, jump-none);
-    // animation-play-state: paused;
   }
 
   .slide {
     width: var(--width);
     user-select: none;
+    overflow: hidden;
 
     img {
       width: 100%;
       height: 100%;
+      margin: 0;
       object-fit: cover;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      transition: all 1s ease;
-      overflow: hidden;
     }
   }
 
@@ -80,7 +74,7 @@
       right: -30px;
     }
 
-    &:first-of-type::before {
+    &:nth-of-type(2)::before {
       z-index: 2;
     }
   }
@@ -141,12 +135,6 @@
     }
 
     &:indeterminate {
-      ~ .next-arrows {
-        label:nth-of-type(2)::before {
-          z-index: 2;
-        }
-      }
-
       ~ .tracks {
         label:first-of-type::after {
           transform: translate(-50%, -50%) scale(1, 1);
@@ -189,21 +177,3 @@
     }
   }
 }
-
-// @keyframes cssonlySlider {
-//   0% {
-//     transform: translateX(0);
-//   }
-
-//   25% {
-//     transform: translateX(calc(var(--width) * -1));
-//   }
-
-//   50% {
-//     transform: translateX(calc(var(--width) * -2));
-//   }
-
-//   75% {
-//     transform: translateX(calc(var(--width) * -3));
-//   }
-// }
