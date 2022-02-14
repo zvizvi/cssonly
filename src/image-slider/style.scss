@@ -4,10 +4,15 @@
   --transition-time: 0.3s;
   --prev-arrow: "❮";
   --next-arrow: "❯";
+
   position: relative;
   width: var(--width);
   height: var(--height);
   margin: auto;
+
+  * {
+    box-sizing: border-box;
+  }
 
   input[type=radio] {
     display: none;
