@@ -48,6 +48,8 @@
   .prev-arrows,
   .next-arrows {
     label {
+      z-index: 1;
+
       &::before {
         color: #aaa;
         font-size: 30px;
@@ -58,7 +60,7 @@
         width: 20px;
         text-align: center;
         line-height: 15px;
-        z-index: 1;
+        z-index: inherit;
         cursor: pointer;
       }
 
@@ -79,8 +81,30 @@
       right: -30px;
     }
 
-    &:first-of-type::before {
+    &:first-of-type {
       z-index: 2;
+    }
+  }
+
+  &.click-to-slide {
+    .prev-arrows,
+    .next-arrows {
+      label::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        z-index: inherit;
+      }
+    }
+
+    .prev-arrows label::after {
+      left: 0;
+    }
+
+    .next-arrows label::after {
+      right: 0;
     }
   }
 
@@ -93,8 +117,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 2;
     opacity: 0.9;
+    pointer-events: none;
 
     label {
       position: relative;
@@ -107,6 +132,7 @@
       margin-right: 6px;
       cursor: pointer;
       transition: opacity 0.2s;
+      pointer-events: all;
 
       &:last-child {
         margin-right: 0;
@@ -141,7 +167,7 @@
 
     &:indeterminate {
       ~ .next-arrows {
-        label:nth-of-type(2)::before {
+        label:nth-of-type(2) {
           z-index: 2;
         }
       }
@@ -167,13 +193,13 @@
         }
 
         ~ .prev-arrows {
-          label:nth-of-type(#{$i - 1})::before {
+          label:nth-of-type(#{$i - 1}) {
             z-index: 2;
           }
         }
 
         ~ .next-arrows {
-          label:nth-of-type(#{$i + 1})::before {
+          label:nth-of-type(#{$i + 1}) {
             z-index: 2;
           }
         }
