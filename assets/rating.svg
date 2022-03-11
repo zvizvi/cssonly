@@ -1,0 +1,61 @@
+<svg fill="none" viewBox="0 0 400 100" width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .nojs-rating {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          font-size: 36px;
+          direction: rtl;
+          margin: auto;
+        }
+
+        .nojs-rating input[type=radio]+label {}
+
+        .nojs-rating input[type=radio]:last-of-type+label {}
+
+        .nojs-rating input[type=radio] {
+          display: none;
+        }
+
+        .nojs-rating input[type=radio]+label::before {
+          content: '★';
+          color: rgba(0, 0, 0, 0.26);
+          font-size: inherit;
+          display: inline-block;
+          cursor: pointer;
+          transform: scale(1);
+          transform-origin: center center;
+          transition: 0.15s;
+        }
+
+        .nojs-rating input[type=radio]+label:hover::before {
+          transform: scale(1.2);
+        }
+
+        .nojs-rating input[type=radio]+label:hover::before,
+        .nojs-rating input[type=radio]+label:hover~label::before,
+        .nojs-rating:not(:hover) input[type=radio]:checked~label::before {
+          content: '★';
+          color: #ffb400;
+        }
+      </style>
+      <div class="container" style="text-align: center;">
+        <div class="nojs-rating">
+          <input type="radio" name="rating" value="5" id="rating-5" />
+          <label for="rating-5"></label>
+          <input type="radio" name="rating" value="4" id="rating-4" />
+          <label for="rating-4"></label>
+          <input type="radio" name="rating" value="3" id="rating-3" />
+          <label for="rating-3"></label>
+          <input type="radio" name="rating" value="2" id="rating-2" />
+          <label for="rating-2"></label>
+          <input type="radio" name="rating" value="1" id="rating-1" />
+          <label for="rating-1"></label>
+        </div>
+      </div>
+    </div>
+  </foreignObject>
+</svg>
